@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
+    <div class="loading">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+            <p>loading...</p>
+            <p>
+                <span class="loading-number">0</span>%
+            </p>
+        </div>
+    </div>
     <div class="container">
         <header>
             <h1>穿越时空，感受重邮巨变</h1>
@@ -148,5 +161,30 @@
             <p class="cpr">出品：红岩网校工作站、团委宣传部</p>
         </main>
     </div>
+    <script>
+        !function(w, d){
+            var gifs = d.querySelectorAll('.image img'),
+                $loading = d.querySelector('.loading'),
+                $num = d.querySelector('.loading-number'),
+                $cont = d.querySelector('.container');
+
+            gifs = [].slice.call(gifs);
+            var percent = 0, loaded = 0;
+
+            gifs.forEach(function(g){
+                g.addEventListener('load', function() {
+                    loaded++;
+                    percent += parseInt(100 / gifs.length);
+                    $num.innerHTML = percent;
+                    console.log(percent, '%');
+                    if(loaded === gifs.length){
+                        console.log('OK');
+                        $loading.style.display = 'none';
+                        $cont.style.opacity = 1;
+                    }
+                });
+            });
+        }(window, document);
+    </script>
 </body>
 </html>
