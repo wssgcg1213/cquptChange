@@ -463,14 +463,14 @@ input[type="search"]::-webkit-search-decoration {
   margin: 0;
   font-size: 22px;
   font-weight: bold;
-  text-indent: 1em;
+  text-indent: 12px;
 }
 .container header h3 {
   margin: 6px 0;
   font-size: 13px;
   color: #8C8C8C;
   font-weight: 100;
-  text-indent: 1em;
+  text-indent: 12px;
 }
 .container main p {
   text-indent: 2em;
